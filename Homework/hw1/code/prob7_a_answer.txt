@@ -1,0 +1,5 @@
+1 sort roster.txt > roster_sort_lastName.txt
+2 awk '{print $1}' roster_sort_lastName.txt > roster_sort_lastName_lastName.txt
+3 awk '{print $1,$2}' roster_sort_lastName.txt > roster_sort_lastName_firstLastNames.txt
+4 awk '{print $2,$3}' roster_sort_lastName.txt > roster_sort_lastName_firstNameEmail.txt
+
