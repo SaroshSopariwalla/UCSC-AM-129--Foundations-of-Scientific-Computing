@@ -4,3 +4,4 @@ Random Number Generators
 Professor Darrel Long
 Scientific Computing Experience: 2
 Experience in Linux/Unix: 3
+Windows 10 and PC
