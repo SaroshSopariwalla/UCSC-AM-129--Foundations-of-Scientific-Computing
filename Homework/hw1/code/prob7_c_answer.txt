@@ -1,0 +1,1 @@
+sort -k1 roster.txt | uniq > roster_sort_lastName_noDuplicate.txt

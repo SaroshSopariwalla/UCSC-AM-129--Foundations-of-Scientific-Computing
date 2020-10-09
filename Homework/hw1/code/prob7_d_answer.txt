@@ -1,0 +1,4 @@
+Output: 24 roster_sort_lastName_noDuplicate.txt
+
+
+Code: wc -l roster_sort_lastName_noDuplicate.txt > prob7_d_answer.txt

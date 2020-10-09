@@ -1,0 +1,10 @@
+Seidl Christa cseidl@ucsc.edu
+Sanchez Enrique enrsanch@ucsc.edu
+Salak Gail Dylan gsalak@ucsc.edu
+Gregorio Florencia fgregori@ucsc.edu
+Garcia Adrian agarc140@ucsc.edu
+Gan Ruoqing rgan2@ucsc.edu
+
+
+
+Code:  grep '^G\|^S' roster.txt | sort -u | sort -r

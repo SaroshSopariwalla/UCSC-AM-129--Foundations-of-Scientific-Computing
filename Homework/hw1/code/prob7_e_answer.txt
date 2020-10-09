@@ -1,0 +1,3 @@
+4
+
+Code: grep '^C\|^D' roster.txt | sort -u | wc -l > prob7_e_answer.txt
