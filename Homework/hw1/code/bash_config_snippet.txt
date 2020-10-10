@@ -26,7 +26,7 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 # Functions added for HW1
 export MY_PATH = "C:\Users\Sarosh Sopariwalla\UCSC\AM129"
-alias wc1 ='wc -l'
+alias wcl ='wc -l'
 function cd_up() {
         cd $(printf "%0.0../" $(seq 1 $1));
 }
