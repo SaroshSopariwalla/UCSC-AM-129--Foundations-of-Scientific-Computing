@@ -5,6 +5,4 @@ Gregorio Florencia fgregori@ucsc.edu
 Garcia Adrian agarc140@ucsc.edu
 Gan Ruoqing rgan2@ucsc.edu
 
-
-
 Code:  grep '^G\|^S' roster.txt | sort -u | sort -r
