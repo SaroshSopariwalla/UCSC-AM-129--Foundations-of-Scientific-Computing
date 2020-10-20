@@ -16,26 +16,21 @@ program dft
   ! Loop variables
   integer :: i
   !!! === 1. Set up physical domain
-
-  
+  do i=1,N
+    x(i)=(i-1)*dx
+  end do
   !!! === 2. Fill in the forcing vector
-
-
+f = forcing(x)
   !!! === 3. Fill in k and T
-
-
+call dft_TransMat(x,k,T)
   !!! === 4. Fill in Tinv 
-
-
+call dft_invtransmat(x,k,Tinv)
   !!! === 5. Set ft = T*f using matvecprod
-
-
+ft = matvecprod(T,f)
   !!! === 6. Apply wavenumber scaling
-
-  
+ft = ft/(1+k**2)
   !!! === 7. Set u = Tinv*ft using matvecprod
-
-
+u = matvecprod(Tinv,ft)
   !!! === Reports the maximum error and writes out the data file
   write(*,*) "Err: ", maxval( abs(u - exactsol(x) ) )
   ! Open the output file and write the columns
