@@ -20,7 +20,6 @@ function matvecprod(A,x) result(y)
     NumbOfCols = SHAPEOFARRAY(2)
     do looper = 1, NumbOfCols
         y(looper) = sum(A(looper,:) * x)
-        !y(looper) = sum(A(:,looper) * x(looper))  PROF FORMULA CHECK 10/20
     end do
 end function matvecprod
 
