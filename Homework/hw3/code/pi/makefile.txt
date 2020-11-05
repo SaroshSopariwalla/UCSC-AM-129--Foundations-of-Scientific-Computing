@@ -1,9 +1,9 @@
 FC = gfortran
 FFLAGS = -Wall -Wextra -Wimplicit-interface -fPIC -fmax-errors=1 -g3 -fcheck=all -fbacktrace -fdefault-real-8 -fdefault-double-8
 
-OBJ = utility.o dftmod.o dft.o
+OBJ = pimod.o pi.o
 
-dft: $(OBJ)
+pi: $(OBJ)
 	$(FC) -o $@ $^ $(FFLAGS)
 
 %.o: %.f90
@@ -12,4 +12,4 @@ dft: $(OBJ)
 .PHONY: clean
 
 clean:
-	rm -f dft *.o *.mod *~
+	rm -f pi *.o *.mod *~
