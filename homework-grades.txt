@@ -1,2 +1,4 @@
 hw1: 25/25
 hw2: 25/25
+hw3: 25/25
+    * Great report! One minor comment: It is easier to read results in a table.
