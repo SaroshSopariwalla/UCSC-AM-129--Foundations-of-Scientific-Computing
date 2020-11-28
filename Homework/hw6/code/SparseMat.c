@@ -82,10 +82,12 @@ void SparseMatSetRow(SparseMat A, int row, int *cols, double *vals)
  */
 void SparseMatMult(SparseMat A, double *x, double *y)
 {
-  for(int i=0;i=A->m;i++){
-    for(int k=0;k=A->nnz[i];k++){
-      y[i]= A->rowVals[i][k] * x[A->cols[i][k]];
+  for (int i = 0; i<(A->m);i++){
+    double sum = 0;
+    for(int k=0; k<(A->nnz[i]);k++){
+      sum = sum + (A->rowVals[i][k]) * x[A->cols[i][k]];
     }
+    y[i]=sum;
   }
 }
 
