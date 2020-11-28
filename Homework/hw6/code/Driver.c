@@ -85,7 +85,7 @@ int main(int argc, char **argv)
   SparseMatSetRow(mat,m-1,colsLR,valsLR);
   
   /* Fill interior rows */
-  for(int i=1; i<=m-1; i++) {
+  for(int i=1; i<m-1; i++) {
     /* ------------ set cols and vals here! --------- */
     int cols[3] = {i-1,i,i+1};
     double vals[3] = {HopR(x[i-1]), Stay(x[i]),HopL(x[i+1])};
