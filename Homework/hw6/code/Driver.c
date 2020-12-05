@@ -47,14 +47,13 @@ int main(int argc, char **argv)
   }
 
   /* Create vectors, intialize u to all ones */
-  /* ------------ Add vectors here! ----------- */
   double u[m];
   double v[m];
   for (int i=0;i<m;i++){
     u[i]=1;
   }
-  normalize_l2(m,u);
 
+  normalize_l2(m,u);
   /* Create empty sparse matrix */
   SparseMat mat = NULL;
   CreateSparseMat(m,m,&mat);
@@ -63,15 +62,13 @@ int main(int argc, char **argv)
   int nnz [m];
 
   for(int i=0;i<=m-1;i++){
-    if (i==0){
+    if (i==0 || i==m-1){
       nnz[i]=2;
-    }else if(i==m-1){
-      nnz[i]=2;
-    } else
-    {
+    }else{
       nnz[i]=3;
     }
   }
+
   SparseMatSetNNZ(mat,nnz);
 
   /* Fill first row */
@@ -86,7 +83,6 @@ int main(int argc, char **argv)
   
   /* Fill interior rows */
   for(int i=1; i<m-1; i++) {
-    /* ------------ set cols and vals here! --------- */
     int cols[3] = {i-1,i,i+1};
     double vals[3] = {HopR(x[i-1]), Stay(x[i]),HopL(x[i+1])};
     SparseMatSetRow(mat,i,cols,vals);
