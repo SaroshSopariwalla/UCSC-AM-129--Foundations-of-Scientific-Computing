@@ -1,15 +1,14 @@
 ! File: write_data.f90
 ! Author: Sarosh Sopariwalla
-! Purpose: Holds subroutines that write matrices and vectors
-!          onto the screen, as well write the solution vectors
-!          to the files x_i.dat for each i.
+! Purpose: Holds subroutines that prints matrices and vectors
+!          onto the screen
 module write_data
     implicit none
 contains
 
 subroutine PrintMatrix (A)
 !Declare Variables
-    real, allocatable,intent(IN)::A(:,:)
+    real(8), allocatable,intent(IN)::A(:,:)
     integer, DIMENSION(2) :: ShapeOfArray
     integer :: Arow,i ! Dimensions of the arrays + loopers
 !Executables
@@ -22,7 +21,7 @@ end subroutine PrintMatrix
 
 subroutine PrintVector (b)
     !Declare Variables
-        real, allocatable,intent(IN)::b(:)
+        real(8), allocatable,intent(IN)::b(:)
         integer, DIMENSION(1) :: ShapeOfArray
         integer :: brow,i ! Dimensions of the arrays + loopers
     !Executables
