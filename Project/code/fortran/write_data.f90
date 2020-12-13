@@ -32,4 +32,21 @@ subroutine PrintVector (b)
         end do
     end subroutine PrintVector
 
+subroutine WriteToFile (unitnumber, filename,x)
+    !Declare Variables
+    integer, intent(IN) :: unitnumber
+    integer :: rownumbs,i
+    integer, dimension(1)::ShapeOfArray
+    character(len=*):: filename
+    real(8), allocatable, intent(IN)::x(:)
+    !Executables
+    ShapeOfArray=SHAPE(x)
+    rownumbs = ShapeOfArray(1)
+    open(unitnumber, file= filename)
+    do i=1,rownumbs
+        write(unitnumber,*) x(i)
+    enddo
+    close(unitnumber)
+end subroutine WriteToFile
+
 end module write_data
