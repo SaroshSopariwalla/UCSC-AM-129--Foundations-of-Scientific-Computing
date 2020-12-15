@@ -4,3 +4,4 @@ hw3: 25/25
     * Great report! One minor comment: It is easier to read results in a table.
 hw4: 25/25
 hw5: 25/25
+hw6: 25/25
