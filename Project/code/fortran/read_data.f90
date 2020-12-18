@@ -28,4 +28,19 @@ subroutine ReadInMatrix (A,b)
     CLOSE(11,STATUS='KEEP')
 end subroutine ReadInMatrix
 
+subroutine ReadJointVectors (Y)
+!Declare Variables
+    real(8), allocatable,intent(INOUT)::Y(:,:)
+    INTEGER :: i,j,numbrows,numbcols              ! Dimensions of the array + loopers
+!Executables
+    open(12,file='Y.dat',status='old',action='read')
+    read(12,*) numbrows, numbcols
+    ALLOCATE (Y(numbrows,numbcols))
+    DO i=1,numbrows
+        read (12,*) (Y(i,j),j=1,numbcols)
+    END DO
+    CLOSE (12, STATUS='KEEP')
+end subroutine ReadJointVectors
+
+
 end module read_data

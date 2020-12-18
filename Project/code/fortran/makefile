@@ -1,16 +1,19 @@
-FC = gfortran
-FFLAGS = -Wall -Wextra -Wimplicit-interface -fPIC -fmax-errors=1 -g3 -fcheck=all -fbacktrace -fdefault-real-8 -fdefault-double-8
+OBJECTS = ge_elim.o\
+	read_data.o\
+	write_data.o\
+	linear_solve.o
 
-OBJ = linear_solve.o read_data.o write_data.o ge_elim.o
-
-linear_solve: $(OBJ)
-	$(FC) -o $@ $^ $(FFLAGS)
-
-%.o: %.f90
-	$(FC) -c $< $(FFLAGS)
+MODULES = ge_elim.mod\
+ read_data.mod\
+  write_data.mod
 
 .PHONY: clean
 
+linear_solve: $(OBJECTS)
+	gfortran $(OBJECTS) -o linear_solve
+%.o: %.f90
+	gfortran -c $<
+%.mod: %.f90
+	gfortran -c $<
 clean:
-	rm -f *.o *.mod
-
+	@rm -f $(OBJECTS) $(MODULES) linear_solve
